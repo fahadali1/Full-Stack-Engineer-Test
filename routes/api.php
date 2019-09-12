@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+// list bookings
+Route::get('show','BookingController@booking');
+//add bookings
+Route::post('add','BookingController@addbooking');
+//delete booking
+Route::delete('delete/{booking_reference}','BookingController@deletebooking');
+//update booking
+Route::put('update/{booking_reference}','BookingController@updatebooking');
