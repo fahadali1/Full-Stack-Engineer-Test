@@ -7,7 +7,8 @@ class BookingController extends Controller
 {
 	// list all bookings
     public function booking(){
-    	return response()->Json(booking::get());}
+        $lists=booking::all();
+    	return response()->Json($lists);}
 //creating booking request
     	public function addbooking(Request $request){
 /*			$booking = booking::create($request->all());*/
@@ -18,7 +19,7 @@ class BookingController extends Controller
         	'status' => 'pending',
         	'booking_reference' => Str::random(10),
         		]);
-    	return response()->Json($booking->booking_reference,201);}
+    	return response()->Json($booking->booking_reference);}
     	// Deleting booking request using booking reference
     	public function deletebooking($booking_reference){
     		

@@ -24,3 +24,4 @@ Route::post('add','BookingController@addbooking');
 Route::delete('delete/{booking_reference}','BookingController@deletebooking');
 //update booking
 Route::put('update/{booking_reference}','BookingController@updatebooking');
+Route::view('vue', 'welcome');
